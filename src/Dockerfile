@@ -1,13 +1,13 @@
 # Use Java 17 as base image
 FROM openjdk:17-jdk-slim
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
-# Copy your built JAR file and rename it to app.jar
-COPY target/mongoDb-0.0.1-SNAPSHOT.jar app.jar
+# Copy your JAR file
+COPY target/*.jar app.jar
 
-# Expose the Spring Boot port
+# Expose the port Spring Boot runs on
 EXPOSE 8080
 
 # Run the application
